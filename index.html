@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fruit Quiz</title>
+    <style>
+        body { 
+            background-color: #f49fe3; 
+            font-family: Arial, sans-serif; 
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        h1 { 
+            color: #000000; 
+            margin-top: 0; 
+        }
+
+        h2 {
+            color: #000000;
+            margin-bottom: 20px;
+        }
+
+        a { 
+            color: #000000; 
+            text-decoration: none;
+            border: 2px solid #000000;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        a:hover {
+            background-color: #000000;
+            color: #fff;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+    <!-- Author: Kyle Kuper -->
+     <!-- Main heading -->
+    <h1>Fruit Identification Challenge!</h1>
+    <hr>
+    <div id="question"></div>
+    <!-- Image map for identifying fruits -->
+    <img src="https://www.spendwithpennies.com/wp-content/uploads/2019/04/Fruit-Salad-SWP-500x375.jpg" usemap="#image-map" id="fruit-map" alt="Fruit Map">
+    <map name="image-map">
+        <area target="_self" alt="Oranges" title="Oranges" href="incorrect.html" coords="435,10,209,145,240,150,333,142,409,126,440,85,453,39" shape="poly">
+        <area target="_self" alt="Pineapple" title="Pineapple" href="incorrect.html" coords="484,121,412,147,334,163,247,170,285,180,337,190,381,209,420,230,460,251,484,239,488,173" shape="poly">
+        <area target="_self" alt="kiwi" title="kiwi" href="incorrect.html" coords="272,189,305,209,335,223,387,248,426,271,443,307,437,338,432,361,388,363,361,363,325,353,289,311,248,288,249,249" shape="poly">
+        <area target="_self" alt="blueberrys" title="blueberrys" href="incorrect.html" coords="185,258,209,294,245,305,266,319,260,366,221,363,181,363,136,369,119,342,109,326,116,301,145,274" shape="poly">
+        <area target="_self" alt="grapes" title="grapes" href="incorrect.html" coords="23,159,58,161,91,177,139,186,139,166,156,149,175,161,174,192,204,193,187,210,166,231,124,255,97,277,84,326,105,349,75,369,31,354,8,315,5,266,6,200" shape="poly">
+        <area target="_self" alt="watermellon" title="watermellon" href="incorrect.html" coords="40,4,15,25,5,53,4,90,4,126,36,129,65,142,89,157,119,163,112,118,100,79,99,61,83,8" shape="poly">
+        <area target="_self" alt="strawberrys" title="strawberrys" href="incorrect.html" coords="107,6,117,41,129,91,148,119,170,121,197,122,226,112,251,99,279,83,289,52,292,38,335,37,331,7,245,1" shape="poly">
+    </map>
+    <!-- Script to randomly select a question -->
+    <script>
+        var randomIndex = Math.floor(Math.random() * 7); // 7 is the number of questions
+        var question;
+        if (randomIndex === 0) {
+            question = "Click on the Oranges.";
+            document.querySelector('area[alt="Oranges"]').href = "correct.html";
+        } else if (randomIndex === 1) {
+            question = "Click on the Pineapple.";
+            document.querySelector('area[alt="Pineapple"]').href = "correct.html";
+        } else if (randomIndex === 2) {
+            question = "Click on the Kiwi.";
+            document.querySelector('area[alt="kiwi"]').href = "correct.html";
+        } else if (randomIndex === 3) {
+            question = "Click on the Blueberries.";
+            document.querySelector('area[alt="blueberrys"]').href = "correct.html";
+        } else if (randomIndex === 4) {
+            question = "Click on the Grapes.";
+            document.querySelector('area[alt="grapes"]').href = "correct.html";
+        } else if (randomIndex === 5) {
+            question = "Click on the Watermelon.";
+            document.querySelector('area[alt="watermellon"]').href = "correct.html";
+        } else {
+            question = "Click on the Strawberries.";
+            document.querySelector('area[alt="strawberrys"]').href = "correct.html";
+        }
+
+        document.getElementById('question').innerHTML = "<h2>" + question + "</h2>";
+    </script>
+</body>
+</html>
+
